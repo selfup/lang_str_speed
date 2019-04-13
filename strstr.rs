@@ -5,7 +5,7 @@ use std::io::Error;
 fn main() {
     match run() {
       Ok(_) => println!("done!"),
-      _error => println!("fuck!")
+      _error => println!("uhoh!")
     }
 }
 
