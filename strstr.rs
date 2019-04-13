@@ -12,8 +12,8 @@ fn main() -> Result<(), Error> {
     while let Ok(size) = buffered.read_line(&mut line) {
         if size == 0 { break }
 
-        if line.contains("OK db=") {
-            lines.push(line.splitn(2, "OK ").nth(1).unwrap().into())
+        if let Some(position) = line.find("OK db=") {
+            lines.push(line[position..].into())
         }
 
         line.clear()

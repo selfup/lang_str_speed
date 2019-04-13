@@ -8,3 +8,5 @@ File.foreach("tmp/logs.log") do |line|
     perfs << perf[1] if perf.length == 2
   end
 end
+
+p perfs[0..40]
