@@ -10,7 +10,7 @@ stream.on('data', data => {
     .split('\n')
     .forEach(line => {
       if (line.indexOf('OK db=') > -1) {
-        lines.push(line.split('OK ')[1].trim());
+        lines.push(line.split('OK ')[1]);
       }
     });
 });
