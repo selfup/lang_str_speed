@@ -1,4 +1,6 @@
 ```bash
+git clone https://gist.github.com/selfup/c25874d25c98651b6e6224b608f0c1ff
+
 time elixirc strstr.ex
 time go run strstr.go
 time ruby strstr.rb
