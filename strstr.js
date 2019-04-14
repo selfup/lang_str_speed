@@ -1,18 +1,18 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const lines = [];
 const stream = fs.createReadStream('tmp/logs.log');
 
 stream.on('data', data => {
-    data
-      .toString()
-      .trim()
-      .split('\n')
-      .filter(line => (line.indexOf('OK') > -1))
-      .map(line => line.split('OK ')[1])
-      .forEach(line => {
-        lines.push(line);
-      });
+  data
+    .toString()
+    .trim()
+    .split('\n')
+    .forEach(line => {
+      if (line.indexOf('OK db=') > -1) {
+        lines.push(line.split('OK ')[1].trim());
+      }
+    });
 });
 
 stream.on('close', () => {
