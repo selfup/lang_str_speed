@@ -4,7 +4,7 @@ set -e
 
 if [[ -d tmp ]]
 then
-  echo 'SETUP ALREADY MADE EXITING'
+  echo 'TMP ALREADY EXIST! EXITING...'
   exit 0
 else
   echo 'THIS IS GOING TO TAKE A WHILE'
